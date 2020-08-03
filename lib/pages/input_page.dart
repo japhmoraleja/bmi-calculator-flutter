@@ -14,7 +14,71 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Column(
         children: <Widget>[
-          Row(
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Color(0xff00274a),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Color(0xff00274a),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Color(0xff00274a),
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Color(0xff00274a),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Color(0xff00274a),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+/*
+Row(
             children: <Widget>[
               Expanded(
                 child: Container(
@@ -82,8 +146,4 @@ class _InputPageState extends State<InputPage> {
               ),
             ],
           ),
-        ],
-      ),
-    );
-  }
-}
+          */
