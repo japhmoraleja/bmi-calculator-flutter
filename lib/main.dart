@@ -36,10 +36,6 @@ class _InputPageState extends State<InputPage> {
       body: Center(
         child: Text('Body Text'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (null),
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
