@@ -6,6 +6,16 @@ class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Color(0xFF001e38),
+        scaffoldBackgroundColor: Color(0xFF001e38),
+        accentColor: Colors.purple,
+        textTheme: TextTheme(
+          bodyText2: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
       home: InputPage(),
     );
   }
@@ -27,6 +37,7 @@ class _InputPageState extends State<InputPage> {
         child: Text('Body Text'),
       ),
       floatingActionButton: FloatingActionButton(
+        onPressed: (null),
         child: Icon(Icons.add),
       ),
     );
