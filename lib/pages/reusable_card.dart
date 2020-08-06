@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/pages/input_page.dart';
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({this.colour, this.cardChild});
@@ -12,7 +11,7 @@ class ReusableCard extends StatelessWidget {
       child: cardChild,
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: bottomContainerColor,
+        color: colour,
         borderRadius: BorderRadius.circular(10),
       ),
     );

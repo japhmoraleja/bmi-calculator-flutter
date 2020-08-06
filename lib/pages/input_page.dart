@@ -3,8 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator/pages/icon_content.dart';
 import 'package:bmi_calculator/pages/reusable_card.dart';
 
-const activeCardColor = Color(0xFF1d1e33);
-const bottomContainerColor = Color(0xff00274a);
+const activeCardColor = Color(0xff00274a);
 const inactiveCardColor = Color(0xFF111328);
 
 class InputPage extends StatefulWidget {
@@ -31,7 +30,7 @@ class _InputPageState extends State<InputPage> {
                       print('male');
                     },
                     child: ReusableCard(
-                      colour: inactiveCardColor,
+                      colour: activeCardColor,
                       cardChild: IconContent(
                           icon: FontAwesomeIcons.mars, label: 'Male'),
                     ),
@@ -53,16 +52,22 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-            child: ReusableCard(),
+            child: ReusableCard(
+              colour: activeCardColor,
+            ),
           ),
           Expanded(
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                  ),
                 ),
               ],
             ),
