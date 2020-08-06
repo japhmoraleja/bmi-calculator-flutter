@@ -25,30 +25,16 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
-                    cardChild: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          color: Colors.white,
-                          size: 80,
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Text(
-                          'Male',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                    cardChild:
+                        IconContent(icon: FontAwesomeIcons.mars, label: 'Male'),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                    cardChild: IconContent(
+                        icon: FontAwesomeIcons.venus, label: 'Female'),
+                  ),
                 ),
               ],
             ),
@@ -76,6 +62,37 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class IconContent extends StatelessWidget {
+  IconContent({this.icon, this.label});
+
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          icon,
+          color: Colors.white,
+          size: 80,
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+          ),
+        ),
+      ],
     );
   }
 }
