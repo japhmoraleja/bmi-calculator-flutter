@@ -4,7 +4,7 @@ import 'package:bmi_calculator/pages/icon_content.dart';
 import 'package:bmi_calculator/pages/reusable_card.dart';
 
 const activeCardColor = Color(0xff00274a);
-const inactiveCardColor = Color(0xFF111328);
+const inactiveCardColor = Color(0xFF00162A);
 
 class InputPage extends StatefulWidget {
   @override
@@ -20,16 +20,19 @@ class _InputPageState extends State<InputPage> {
     if (gender == 1) {
       if (maleCardColor == inactiveCardColor) {
         maleCardColor = activeCardColor;
+        femaleCardColor = inactiveCardColor;
       } else {
         maleCardColor = inactiveCardColor;
+        femaleCardColor = activeCardColor;
       }
-    } else {
-      if (gender == 2) {
-        if (femaleCardColor == inactiveCardColor) {
-          femaleCardColor = activeCardColor;
-        } else {
-          femaleCardColor = inactiveCardColor;
-        }
+    }
+    if (gender == 2) {
+      if (femaleCardColor == inactiveCardColor) {
+        femaleCardColor = activeCardColor;
+        maleCardColor = inactiveCardColor;
+      } else {
+        femaleCardColor = inactiveCardColor;
+        maleCardColor = activeCardColor;
       }
     }
   }
