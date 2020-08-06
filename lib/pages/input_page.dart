@@ -11,6 +11,8 @@ enum Gender {
   female,
 }
 
+Gender selectedGender;
+
 //
 class InputPage extends StatefulWidget {
   @override
@@ -18,8 +20,6 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Gender selectedGender;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,56 +32,56 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: <Widget>[
+                // male
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      print('male');
+                  child: ReusableCard(
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: ReusableCard(
-                      colour: selectedGender == Gender.male
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      cardChild: IconContent(
-                          icon: FontAwesomeIcons.mars, label: 'Male'),
-                    ),
+                    colour: selectedGender == Gender.male
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild:
+                        IconContent(icon: FontAwesomeIcons.mars, label: 'Male'),
                   ),
                 ),
+                // female
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      print('female');
+                  child: ReusableCard(
+                    onPress: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: ReusableCard(
-                      colour: selectedGender == Gender.female
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      cardChild: IconContent(
-                          icon: FontAwesomeIcons.venus, label: 'Female'),
-                    ),
+                    colour: selectedGender == Gender.female
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    cardChild: IconContent(
+                        icon: FontAwesomeIcons.venus, label: 'Female'),
                   ),
                 ),
               ],
             ),
           ),
+          // slider
           Expanded(
             child: ReusableCard(
               colour: activeCardColor,
             ),
           ),
+          // bottom widgets
           Expanded(
             child: Row(
               children: <Widget>[
+                // l1
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
                   ),
                 ),
+                // l2
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
@@ -90,6 +90,7 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
+          // calculate
           GestureDetector(
             onTap: () {
               print('calculate');
