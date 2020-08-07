@@ -10,9 +10,14 @@ const kLabelTextStyle = TextStyle(
 
 const kNumberTextStyle = TextStyle(fontSize: 80.0, fontWeight: FontWeight.w900);
 
+const kLowerNumberTextStyle =
+    TextStyle(fontSize: 40.0, fontWeight: FontWeight.w900);
+
 enum Gender {
   male,
   female,
 }
 
 Gender selectedGender;
+
+int height = 160;

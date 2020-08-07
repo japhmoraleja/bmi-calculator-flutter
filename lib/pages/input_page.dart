@@ -72,13 +72,26 @@ class _InputPageState extends State<InputPage> {
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
-                      Text('180', style: kNumberTextStyle),
+                      Text(height.toString(), style: kNumberTextStyle),
                       SizedBox(width: 10),
                       Text(
                         'cm',
                         style: TextStyle(fontSize: 20),
                       ),
                     ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 120.0,
+                    max: 220.0,
+                    activeColor: Color(0xFFeb1555),
+                    inactiveColor: Color(0xff8d8e98),
+                    onChanged: (double newValue) {
+                      setState(() {
+                        height = newValue.round();
+                      });
+                      // print(newValue);
+                    },
                   ),
                 ],
               ),
