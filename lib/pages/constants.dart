@@ -8,7 +8,7 @@ const kLabelTextStyle = TextStyle(
   color: Colors.white,
 );
 
-const kNumberTextStyle = TextStyle(fontSize: 80.0, fontWeight: FontWeight.w900);
+const kNumberTextStyle = TextStyle(fontSize: 70.0, fontWeight: FontWeight.w900);
 
 const kLowerNumberTextStyle =
     TextStyle(fontSize: 40.0, fontWeight: FontWeight.w900);
