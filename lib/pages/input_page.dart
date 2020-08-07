@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator/pages/icon_content.dart';
 import 'package:bmi_calculator/pages/reusable_card.dart';
-
-const activeCardColor = Color(0xff00274a);
-const inactiveCardColor = Color(0xFF00162A);
-
-enum Gender {
-  male,
-  female,
-}
-
-Gender selectedGender;
+import 'package:bmi_calculator/pages/constants.dart';
 
 //
 class InputPage extends StatefulWidget {
@@ -68,8 +59,10 @@ class _InputPageState extends State<InputPage> {
           // slider
           Expanded(
             child: ReusableCard(
-              colour: activeCardColor,
-            ),
+                colour: activeCardColor,
+                cardChild: Column(
+                  children: <Widget>[Text('Slider')],
+                )),
           ),
           // bottom widgets
           Expanded(
