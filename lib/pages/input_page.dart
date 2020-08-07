@@ -160,6 +160,27 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('WEIGHT'),
+                        Text(weight.toString(), style: kLowerNumberTextStyle),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(icon: FontAwesomeIcons.minus),
+                            // FloatingActionButton(
+                            //   child: Icon(Icons.remove),
+                            //   backgroundColor: Color(0xFF073678),
+                            //   elevation: 0,
+                            // ),
+                            SizedBox(width: 20),
+                            RoundIconButton(icon: FontAwesomeIcons.plus),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 // l2
@@ -185,6 +206,25 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  RoundIconButton({this.icon});
+
+  final IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(icon),
+      onPressed: () {},
+      constraints: BoxConstraints.tightFor(
+        width: 56,
+        height: 56,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF566c8a),
     );
   }
 }
