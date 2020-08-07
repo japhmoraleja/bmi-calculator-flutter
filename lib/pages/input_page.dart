@@ -70,14 +70,60 @@ class _InputPageState extends State<InputPage> {
                   Text('HEIGHT'),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Text(height.toString(), style: kNumberTextStyle),
-                      SizedBox(width: 10),
-                      Text(
-                        'cm',
-                        style: TextStyle(fontSize: 20),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(
+                              () {
+                                height--;
+                              },
+                            );
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                '-',
+                                style: TextStyle(fontSize: 80),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: <Widget>[
+                          Text(height.toString(), style: kNumberTextStyle),
+                          SizedBox(width: 10),
+                          Text(
+                            'cm',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ],
+                      ),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              height++;
+                            });
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                '+',
+                                style: TextStyle(fontSize: 80),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -133,7 +179,7 @@ class _InputPageState extends State<InputPage> {
             child: Container(
               color: Color(0xFFEB1555),
               margin: EdgeInsets.only(top: 10),
-              height: 80,
+              height: 60,
               width: double.infinity,
             ),
           ),
