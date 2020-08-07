@@ -66,6 +66,7 @@ class _InputPageState extends State<InputPage> {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  // SizedBox(height: 10),
                   Text('HEIGHT'),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -86,13 +87,13 @@ class _InputPageState extends State<InputPage> {
                       thumbColor: Color(0xFFEB1555),
                       overlayColor: Color(0x30EB1555),
                       thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10),
-                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30),
+                      overlayShape: RoundSliderOverlayShape(overlayRadius: 20),
+                      inactiveTrackColor: Color(0xff8d8e98),
                     ),
                     child: Slider(
                       value: height.toDouble(),
                       min: 120.0,
                       max: 220.0,
-                      inactiveColor: Color(0xff8d8e98),
                       onChanged: (double newValue) {
                         setState(() {
                           height = newValue.round();
