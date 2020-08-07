@@ -19,6 +19,7 @@ class _InputPageState extends State<InputPage> {
         title: Center(child: Text('BMI Calculator')),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
             child: Row(
@@ -30,6 +31,7 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         selectedGender = Gender.male;
                       });
+                      print('male');
                     },
                     colour: selectedGender == Gender.male
                         ? activeCardColor
@@ -45,6 +47,7 @@ class _InputPageState extends State<InputPage> {
                       setState(() {
                         selectedGender = Gender.female;
                       });
+                      print('female');
                     },
                     colour: selectedGender == Gender.female
                         ? activeCardColor
@@ -59,10 +62,27 @@ class _InputPageState extends State<InputPage> {
           // slider
           Expanded(
             child: ReusableCard(
-                colour: activeCardColor,
-                cardChild: Column(
-                  children: <Widget>[Text('Slider')],
-                )),
+              colour: activeCardColor,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('HEIGHT'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: <Widget>[
+                      Text('180', style: kNumberTextStyle),
+                      SizedBox(width: 10),
+                      Text(
+                        'cm',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
           // bottom widgets
           Expanded(
