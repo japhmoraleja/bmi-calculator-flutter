@@ -47,15 +47,19 @@ class FineTuneCard extends StatelessWidget {
 }
 
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon, this.color});
+  RoundIconButton({this.icon, this.color, this.add, @required this.onPressed});
 
   final IconData icon;
   final Color color;
+  final Function add;
+  final Function onPressed;
+
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
+      onPressed: onPressed,
+      elevation: 0,
       child: Icon(icon, color: Colors.white),
-      onPressed: () {},
       constraints: BoxConstraints.tightFor(
         width: 56,
         height: 56,

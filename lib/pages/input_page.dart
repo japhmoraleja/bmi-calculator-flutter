@@ -22,6 +22,7 @@ class _InputPageState extends State<InputPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
+            flex: 2,
             child: Row(
               children: <Widget>[
                 // male
@@ -61,6 +62,7 @@ class _InputPageState extends State<InputPage> {
           ),
           // slider
           Expanded(
+            flex: 2,
             child: ReusableCard(
               colour: activeCardColor,
               cardChild: Column(
@@ -154,6 +156,7 @@ class _InputPageState extends State<InputPage> {
           ),
           // bottom widgets
           Expanded(
+            flex: 2,
             child: Row(
               children: <Widget>[
                 // l1
@@ -170,15 +173,31 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             RoundIconButton(
-                                icon: FontAwesomeIcons.minus,
-                                color: Colors.white),
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    weight--;
+                                  },
+                                );
+                              },
+                            ),
                             // FloatingActionButton(
                             //   child: Icon(Icons.remove),
                             //   backgroundColor: Color(0xFF073678),
                             //   elevation: 0,
                             // ),
                             SizedBox(width: 20),
-                            RoundIconButton(icon: FontAwesomeIcons.plus),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    weight++;
+                                  },
+                                );
+                              },
+                            ),
                           ],
                         )
                       ],
@@ -189,21 +208,75 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('AGE'),
+                        Text(age.toString(), style: kLowerNumberTextStyle),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    age--;
+                                  },
+                                );
+                              },
+                            ),
+                            // FloatingActionButton(
+                            //   child: Icon(Icons.remove),
+                            //   backgroundColor: Color(0xFF073678),
+                            //   elevation: 0,
+                            // ),
+                            SizedBox(width: 20),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    age++;
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
             ),
           ),
           // calculate
-          GestureDetector(
-            onTap: () {
-              print('calculate');
-            },
-            child: Container(
-              color: Color(0xFFEB1555),
-              margin: EdgeInsets.only(top: 10),
-              height: 60,
-              width: double.infinity,
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                print('calculate');
+              },
+              child: Align(
+                alignment: Alignment.center,
+                child: Container(
+                  // fit: BoxFit.fitHeight,
+                  color: Color(0xFFEB1555),
+                  padding: EdgeInsets.all(10),
+
+                  // height: 80,
+                  width: double.infinity,
+                  child: Text(
+                    'CALCULATE',
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
             ),
           ),
         ],
