@@ -45,7 +45,7 @@ class ResultsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(resultText, style: kNormalTextStyle),
+                    Text(resultText.toUpperCase(), style: kNormalTextStyle),
                     Text(bmiResult, style: kBMITextStyle),
                     Text(interpretation, style: kInterpretationTextStyle),
                   ],
