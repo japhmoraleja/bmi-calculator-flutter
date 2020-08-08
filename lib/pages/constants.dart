@@ -17,7 +17,7 @@ const kNormalTextStyle = TextStyle(
   color: Colors.green,
 );
 
-const kOverwightTextStyle = TextStyle(fontSize: 30, color: Colors.orange);
+const kOverweightTextStyle = TextStyle(fontSize: 30, color: Colors.orange);
 
 const kObeseTextStyle = TextStyle(fontSize: 30, color: Colors.red);
 

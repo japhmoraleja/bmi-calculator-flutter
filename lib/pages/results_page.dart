@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/pages/reusable_card.dart';
 
 class ResultsPage extends StatelessWidget {
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  const ResultsPage(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +45,9 @@ class ResultsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text('taba', style: kNormalTextStyle),
-                    Text('20.0', style: kBMITextStyle),
-                    Text('Interpretation', style: kInterpretationTextStyle),
+                    Text(resultText, style: kNormalTextStyle),
+                    Text(bmiResult, style: kBMITextStyle),
+                    Text(interpretation, style: kInterpretationTextStyle),
                   ],
                 ),
               ),
@@ -46,7 +55,7 @@ class ResultsPage extends StatelessWidget {
           ),
           Expanded(
             child: BottomButton(
-              buttonText: 'Test Again',
+              buttonText: 'RE-CALCULATE',
               onTap: () {
                 Navigator.pop(context);
               },

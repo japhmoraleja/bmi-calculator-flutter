@@ -90,7 +90,7 @@ class BottomButton extends StatelessWidget {
         onTap: onTap,
         child: Center(
           child: Container(
-            color: Color(0xFFEB1555),
+            color: inactiveCardColor,
             padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
             width: double.infinity,
             child: Text(
