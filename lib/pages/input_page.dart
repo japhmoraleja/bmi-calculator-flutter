@@ -253,32 +253,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           // calculate
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                print('calculate');
-              },
-              child: Align(
-                alignment: Alignment.center,
-                child: Container(
-                  // fit: BoxFit.fitHeight,
-                  color: Color(0xFFEB1555),
-                  padding: EdgeInsets.all(10),
-
-                  // height: 80,
-                  width: double.infinity,
-                  child: Text(
-                    'CALCULATE',
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w900,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          BottomButton(),
         ],
       ),
     );

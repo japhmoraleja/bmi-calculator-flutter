@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/pages/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/pages/results_page.dart';
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({this.colour, this.cardChild, this.onPress});
@@ -12,12 +13,14 @@ class ReusableCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPress,
-      child: Container(
-        child: cardChild,
-        margin: EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          color: colour,
-          borderRadius: BorderRadius.circular(10),
+      child: Expanded(
+        child: Container(
+          child: cardChild,
+          margin: EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            color: colour,
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       ),
     );
@@ -66,6 +69,46 @@ class RoundIconButton extends StatelessWidget {
       ),
       shape: CircleBorder(),
       fillColor: Color(0xFF566c8a),
+    );
+  }
+}
+
+class BottomButton extends StatelessWidget {
+  const BottomButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          print('calculate');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return ResultsPage();
+              },
+            ),
+          );
+        },
+        child: Center(
+          child: Container(
+            color: Color(0xFFEB1555),
+            padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+            width: double.infinity,
+            child: Text(
+              'CALCULATE',
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.w900,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
