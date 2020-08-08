@@ -85,7 +85,7 @@ class BottomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
       child: GestureDetector(
         onTap: onTap,
         child: Center(

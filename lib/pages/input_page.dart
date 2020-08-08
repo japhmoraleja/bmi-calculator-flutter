@@ -241,11 +241,6 @@ class _InputPageState extends State<InputPage> {
                                 );
                               },
                             ),
-                            // FloatingActionButton(
-                            //   child: Icon(Icons.remove),
-                            //   backgroundColor: Color(0xFF073678),
-                            //   elevation: 0,
-                            // ),
                             SizedBox(width: 20),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
