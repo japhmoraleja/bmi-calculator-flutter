@@ -45,8 +45,13 @@ class ResultsPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Container(),
-          )
+            child: BottomButton(
+              buttonText: 'Test Again',
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
         ],
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:bmi_calculator/pages/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/pages/results_page.dart';
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({this.colour, this.cardChild, this.onPress});
@@ -74,32 +73,28 @@ class RoundIconButton extends StatelessWidget {
 }
 
 class BottomButton extends StatelessWidget {
-  const BottomButton({
-    Key key,
-  }) : super(key: key);
+  BottomButton({
+    @required this.buttonText,
+    this.returnTo,
+    @required this.onTap,
+  });
+
+  final String buttonText;
+  final Function returnTo;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        onTap: () {
-          print('calculate');
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return ResultsPage();
-              },
-            ),
-          );
-        },
+        onTap: onTap,
         child: Center(
           child: Container(
             color: Color(0xFFEB1555),
             padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
             width: double.infinity,
             child: Text(
-              'CALCULATE',
+              buttonText,
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w900,

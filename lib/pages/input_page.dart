@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/pages/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator/pages/icon_content.dart';
@@ -167,7 +168,17 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text('WEIGHT'),
-                        Text(weight.toString(), style: kLowerNumberTextStyle),
+                        Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(weight.toString(),
+                                  style: kLowerNumberTextStyle),
+                              SizedBox(width: 5),
+                              Text('kg'),
+                            ],
+                          ),
+                        ),
                         SizedBox(height: 5),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -253,7 +264,17 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           // calculate
-          BottomButton(),
+          BottomButton(
+            buttonText: 'CALCULATE',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
