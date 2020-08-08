@@ -1,15 +1,16 @@
 import 'dart:math';
+import 'package:bmi_calculator/pages/constants.dart';
 
 class CalculatorLogic {
-  CalculatorLogic({this.height, this.weight});
+  CalculatorLogic({this.heightCalculated, this.weightCalculated});
 
-  final int height;
-  final int weight;
+  final int heightCalculated;
+  final int weightCalculated;
 
   double _bmi;
 
   String calculateBMI() {
-    double _bmi = weight / pow(height / 100, 2);
+    double _bmi = weightInitial / pow(heightInitial / 100, 2);
     return _bmi.toStringAsFixed(1);
   }
 

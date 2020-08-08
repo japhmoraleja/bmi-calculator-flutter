@@ -81,7 +81,7 @@ class _InputPageState extends State<InputPage> {
                           onTap: () {
                             setState(
                               () {
-                                height--;
+                                heightInitial--;
                               },
                             );
                           },
@@ -102,7 +102,8 @@ class _InputPageState extends State<InputPage> {
                         crossAxisAlignment: CrossAxisAlignment.baseline,
                         textBaseline: TextBaseline.alphabetic,
                         children: <Widget>[
-                          Text(height.toString(), style: kNumberTextStyle),
+                          Text(heightInitial.toString(),
+                              style: kNumberTextStyle),
                           SizedBox(width: 10),
                           Text(
                             'cm',
@@ -114,7 +115,7 @@ class _InputPageState extends State<InputPage> {
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              height++;
+                              heightInitial++;
                             });
                           },
                           child: Column(
@@ -141,12 +142,12 @@ class _InputPageState extends State<InputPage> {
                       inactiveTrackColor: Color(0xff8d8e98),
                     ),
                     child: Slider(
-                      value: height.toDouble(),
+                      value: heightInitial.toDouble(),
                       min: 120.0,
                       max: 220.0,
                       onChanged: (double newValue) {
                         setState(() {
-                          height = newValue.round();
+                          heightInitial = newValue.round();
                         });
                         // print(newValue);
                       },
@@ -175,7 +176,7 @@ class _InputPageState extends State<InputPage> {
                             crossAxisAlignment: CrossAxisAlignment.baseline,
                             textBaseline: TextBaseline.alphabetic,
                             children: [
-                              Text(weight.toString(),
+                              Text(weightInitial.toString(),
                                   style: kLowerNumberTextStyle),
                               SizedBox(width: 5),
                               Text('kg'),
@@ -191,7 +192,7 @@ class _InputPageState extends State<InputPage> {
                               onPressed: () {
                                 setState(
                                   () {
-                                    weight--;
+                                    weightInitial--;
                                   },
                                 );
                               },
@@ -207,7 +208,7 @@ class _InputPageState extends State<InputPage> {
                               onPressed: () {
                                 setState(
                                   () {
-                                    weight++;
+                                    weightInitial++;
                                   },
                                 );
                               },
@@ -226,7 +227,8 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text('AGE'),
-                        Text(age.toString(), style: kLowerNumberTextStyle),
+                        Text(ageInitial.toString(),
+                            style: kLowerNumberTextStyle),
                         SizedBox(height: 5),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -236,7 +238,7 @@ class _InputPageState extends State<InputPage> {
                               onPressed: () {
                                 setState(
                                   () {
-                                    age--;
+                                    ageInitial--;
                                   },
                                 );
                               },
@@ -247,7 +249,7 @@ class _InputPageState extends State<InputPage> {
                               onPressed: () {
                                 setState(
                                   () {
-                                    age++;
+                                    ageInitial++;
                                   },
                                 );
                               },
@@ -265,8 +267,9 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonText: 'CALCULATE',
             onTap: () {
-              CalculatorLogic calc =
-                  CalculatorLogic(height: height, weight: weight);
+              CalculatorLogic calc = CalculatorLogic(
+                  heightCalculated: heightInitial,
+                  weightCalculated: weightInitial);
 
               Navigator.push(
                 context,

@@ -39,8 +39,8 @@ enum Gender {
 
 Gender selectedGender;
 
-int height = 160;
+int heightInitial = 160;
 
-int weight = 60;
+int weightInitial = 60;
 
-int age = 18;
+int ageInitial = 18;
